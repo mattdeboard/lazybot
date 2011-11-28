@@ -1,4 +1,4 @@
-(let [plugins #{"dictionary" "lmgtfy" "login"
+(let [plugins #{"dictionary" "lmgtfy" "login" "whatis"
                 "help" "load" "yesno" "clojure" "google" "karma"
                 "seen" "utils" "operator" "github"}]
   {:servers ["irc.freenode.net"]        ; A list of servers.
@@ -21,20 +21,11 @@
                                         ;; multi-char prefixes starting with
                                         ;; `##`
                                         #"##(([^#]|#(?!#))+)\s*((##)?(?=.*##)|$)"]
-                             ;; list of prefixes NOT to use in certain channels
-                             ;;"#tempchan" ["->"]   ; turn this off for testing
-                             ;;"#clojure" [","]}}    ; let clojurebot have this one
                              }}
    :servers-port 21310                  ; port for plugins that require a webserver
    :github {:commits {"https://github.com/mattdeboard/lazybot" {"irc.freenode.net" ["#postfarm"]}}}
    "irc.freenode.net" {:channels ["#postfarm"]
                        :bot-name "pfbot"
-                       :sed {:blacklist #{"#tempchan2"}}
                        :bot-password nil
                        :users (read-string (slurp "/home/matt/lazybot/.lazybot/secret.clj")) 
-                       :title {:blacklist #{"#foo"}}
-                       :autoreply {:autoreplies {"#clojure" {#".*(https?://)richhickey(.github.com/\S*).*" "Nooooo, that's so out of date! Please see instead $1clojure$2 and try to stop linking to rich's repo."}}}
                        :plugins plugins}})
-
-; users is a series of username to password and privileges.
-; plugins is a list of plugins to load at startup.
