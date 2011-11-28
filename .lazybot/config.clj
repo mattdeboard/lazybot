@@ -1,6 +1,6 @@
 (let [plugins #{"dictionary" "lmgtfy" "login" "whatis"
                 "help" "load" "yesno" "clojure" "google" "karma"
-                "seen" "utils" "operator" "github"}]
+                "seen" "utils" "operator" "github" "translate"}]
   {:servers ["irc.freenode.net"]        ; A list of servers.
    :prepends #{"@"}   ; The character you want for a prepend. Currently set to @
    :weather {:token ""} ; Wunderground token.
@@ -23,8 +23,8 @@
                                         #"##(([^#]|#(?!#))+)\s*((##)?(?=.*##)|$)"]
                              }}
    :servers-port 21310                  ; port for plugins that require a webserver
-   :github {:commits {"https://github.com/mattdeboard/lazybot" {"irc.freenode.net" ["#postfarm"]}}}
-   "irc.freenode.net" {:channels ["#postfarm"]
+   :github {:commits {"https://github.com/mattdeboard/lazybot" {"irc.freenode.net" ["#mytempchan"]}}}
+   "irc.freenode.net" {:channels ["#postfarm" "#mytempchan"]
                        :bot-name "pfbot"
                        :bot-password nil
                        :users (read-string (slurp "/home/matt/lazybot/.lazybot/secret.clj")) 
