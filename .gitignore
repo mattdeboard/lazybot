@@ -1,3 +1,4 @@
+.lein-deps-sum
 secret.clj
 count-lines.sh
 pom.xml
