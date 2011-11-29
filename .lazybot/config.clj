@@ -23,8 +23,7 @@
                                         #"##(([^#]|#(?!#))+)\s*((##)?(?=.*##)|$)"]
                              }}
    :servers-port 21310                  ; port for plugins that require a webserver
-   :github {:commits {"https://github.com/mattdeboard/lazybot" {"irc.freenode.net" ["#mytempchan"]}}}
-   "irc.freenode.net" {:channels ["#postfarm" "#mytempchan"]
+   "irc.freenode.net" {:channels ["#postfarm"]
                        :bot-name "pfbot"
                        :bot-password nil
                        :users (read-string (slurp "/home/matt/lazybot/.lazybot/secret.clj")) 
